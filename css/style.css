@@ -16,12 +16,13 @@ body {
 }
 
 .left {
-  width: 30vw;
+  width: 25vw;
   padding: 5px;
 }
 
 .right {
-  width: 70vw;
+  width: 75vw;
+  margin: 10px 0;
 }
 
 .home ul li {
@@ -56,11 +57,66 @@ body {
 .footer {
   display: flex;
   font-size: 10px;
-  gap: 13px;
+  gap: 4px;
   position: absolute;
   bottom: 20px;
 }
 
 .footer a {
   color: grey;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  background: rgb(34, 34, 34);
+}
+
+.header > * {
+  padding: 15px;
+}
+.spotifyPlaylist {
+  padding: 10px;
+  font-size: 13px;
+}
+
+.cardConatiner {
+  margin: 10px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 175px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #252525;
+  position: relative;
+}
+
+.card > * {
+  padding-top: 10px;
+}
+
+.card img {
+  width: 100%;
+  object-fit: contain;
+}
+
+.play {
+  width: 38px;
+  height: 31px;
+  border-radius: 50%;
+  background-color: #1ed760;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 151px;
+  position: absolute;
+  left: 74%;
+}
+
+.play-container {
+  height: 100%;
 }
