@@ -10,9 +10,11 @@
 .justify-center {
   justify-content: center;
 }
+
 .item-center {
   align-items: center;
 }
+
 .bg-black {
   background-color: black;
   color: white;
@@ -25,13 +27,38 @@
 .bg-grey {
   background-color: #121212;
 }
+
 .rounded {
   border-radius: 10px;
 }
+
 .m-1 {
   margin: 5px;
 }
 
 .p-1 {
   padding: 10px;
+}
+
+/* CSS for dark-themed scrollbar */
+
+/* WebKit Scrollbar */
+::-webkit-scrollbar {
+  width: 12px; /* width of the scrollbar */
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #333; /* color of the track */
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #666; /* color of the handle */
+  border-radius: 6px; /* border radius of the handle */
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #888; /* color of the handle on hover */
 }
