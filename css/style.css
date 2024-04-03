@@ -173,10 +173,12 @@ body {
 }
 
 .playbar {
-  position: absolute;
-  bottom: 0;
-  background: rgb(219, 238, 219);
-  width: 95%;
+  position: fixed;
+  bottom: 20px;
+  filter: invert(1);
+  background: #dad5d5;
+  border-radius: 30px;
+  width: 70vw;
   padding: 7px;
 }
 
@@ -187,36 +189,41 @@ body {
 }
 
 .songsList ul {
-  padding: 0 30px;
+  padding: 0 15px;
 }
 .songsList ul li {
   list-style-type: decimal;
   font-size: 14px;
   display: flex;
-  gap: 24px;
+  gap: 10px;
   cursor: pointer;
   padding: 12px 0;
   border: 1px solid white;
   border-radius: 5px;
   padding: 5px;
   margin: 10px 0;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
 }
-.playNow{
+.playNow {
   display: flex;
   /* justify-content: center; */
   /* align-items: center; */
 }
 
-.playNow{
+.playNow {
   font-size: 29px;
-    width: 69px;
-    padding: 5px;
+  width: 69px;
+  padding: 5px;
 }
-.playNow span{
-font-size: 11px;
+.playNow span {
+  font-size: 11px;
 }
-.info{
+.info {
   font-size: 13px;
+  width: 135px
+}
+.songsList{
+  height: 350px;
+  overflow: auto;
 }

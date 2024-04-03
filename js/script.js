@@ -24,7 +24,16 @@ async function main() {
 
     let songUL = document.querySelector(".songsList").getElementsByTagName("ul")[0];
     for (const song of songs) {
-        songUL.innerHTML = songUL.innerHTML + ` <li>${song.replaceAll("%20", " ")}</li>`;
+        songUL.innerHTML = songUL.innerHTML + ` <li><img src="/img/music.svg" class="invert">
+                            <div class="info">
+                                <div> ${song.replaceAll("%20", " ")}</div>
+                                <div>Yashraj_K</div>
+                            </div>
+                            <div class="playNow">
+                                <span>Play Now</span>
+                                <img src="/img/play.svg" class="invert">
+                            </div>
+       </li>`;
     }
 
     var audio = new Audio(songs[0]);
