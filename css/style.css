@@ -242,6 +242,7 @@ body {
   border-radius: 10px;
   left: 01;
   margin: 10px;
+  cursor: pointer;
 }
 
 .circle {
@@ -268,4 +269,20 @@ body {
 .aboveBar {
   display: flex;
   justify-content: space-between;
+}
+
+@media (max-width: 1024px) {
+  .left {
+    background-color: red;
+    position: absolute;
+    left: -270px;
+    transition: all -3s;
+    z-index: 1;
+  }
+  .playbar{
+    width: 90vw;
+  }
+  .right{
+    width: 100vw;
+  }
 }
