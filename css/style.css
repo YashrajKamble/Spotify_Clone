@@ -258,3 +258,14 @@ body {
 .songsbuttons img {
   cursor: pointer;
 }
+
+.songInfo,
+.songTime {
+  color: black;
+  padding: 5px 10px;
+}
+
+.aboveBar {
+  display: flex;
+  justify-content: space-between;
+}

@@ -1,5 +1,29 @@
 console.log("hello spotify");
 
+function secondsToMinutesSeconds(seconds) {
+    // Round seconds to nearest whole number
+    seconds = Math.round(seconds);
+
+    var minutes = Math.floor(seconds / 60);
+    var remainingSeconds = seconds % 60;
+    
+    // Ensure two digits for minutes and seconds
+    var minutesStr = (minutes < 10 ? '0' : '') + minutes;
+    var secondsStr = (remainingSeconds < 10 ? '0' : '') + remainingSeconds;
+    
+    return minutesStr + ':' + secondsStr;
+}
+
+// Example usage:
+console.log(secondsToMinutesSeconds(123.456)); // Output: 02:03
+
+
+
+
+
+
+
+
 let currentSong = new Audio();
 async function getSongs() {
     let a = await fetch("http://127.0.0.1:5500/songs/");
@@ -23,6 +47,9 @@ const playMusic = (track) => {
     // let audio = new Audio("/songs/" + track);
     currentSong.src = "/songs/" + track;
     currentSong.play();
+    play.src = "/img/pause.svg";
+    document.querySelector(".songInfo").innerHTML = track;
+    document.querySelector(".songTime").innerHTML = "00:00 / 00:00";
 }
 
 
@@ -55,12 +82,18 @@ async function main() {
     play.addEventListener("click", () => {
         if (currentSong.paused) {
             currentSong.play();
+            play.src = "/img/pause.svg";
         }
         else {
             currentSong.pause();
+            play.src = "/img/play.svg";
         }
     })
-
+    //listen for timeupdate event
+    currentSong.addEventListener("timeupdate", () => {
+        console.log(currentSong.currentTime, currentSong.duration);
+        document.querySelector(".songTime").innerHTML = `${secondsToMinutesSeconds(currentSong.currentTime)} / ${secondsToMinutesSeconds(currentSong.duration)}`
+    })
 
 }
 main()
