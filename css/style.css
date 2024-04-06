@@ -80,6 +80,8 @@ body {
 
 .nav {
   padding: 15px;
+  display: flex;
+  gap: 2px;
 }
 
 .spotifyPlaylist {
@@ -130,6 +132,10 @@ body {
 
 .play-container {
   height: 100%;
+}
+
+.hamburger {
+  display: none;
 }
 
 .buttons > * {
@@ -273,16 +279,20 @@ body {
 
 @media (max-width: 1024px) {
   .left {
-    background-color: red;
+    background-color: black;
     position: absolute;
-    left: -270px;
+    left: -500px;
     transition: all -3s;
     z-index: 1;
+    width: 300px;
   }
-  .playbar{
+  .playbar {
     width: 90vw;
   }
-  .right{
+  .right {
     width: 100vw;
+  }
+  .hamburger {
+    display: block;
   }
 }
