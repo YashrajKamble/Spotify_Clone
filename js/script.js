@@ -19,12 +19,10 @@ console.log(secondsToMinutesSeconds(123.456)); // Output: 02:03
 
 
 
-
-
-
-
-
 let currentSong = new Audio();
+let songs;
+
+
 async function getSongs() {
     let a = await fetch("http://127.0.0.1:5500/songs/");
     let response = await a.text();
@@ -59,7 +57,7 @@ const playMusic = (track, pause = false) => {
 
 
 async function main() {
-    let songs = await getSongs();
+    songs = await getSongs();
     // console.log(songs);
     playMusic(songs[0], true)
 
@@ -113,12 +111,32 @@ async function main() {
         document.querySelector(".left").style.left = "0";
     })
 
-        //add event listener for close button on left pannel
-         //add event listener for close button on left pannel
+    //add event listener for close button on left pannel
+    //add event listener for close button on left pannel
     document.querySelector(".close").addEventListener("click", () => {
         document.querySelector(".left").style.left = "-100%";
 
     });
+
+    // add event listenser to previous and next button
+    previous.addEventListener("click", () => {
+        console.log("previous clicked");
+        let index = songs.indexOf(currentSong.src.split("/").slice(-1)[0]);
+        console.log(songs, index);
+        if ((index - 1) >= 0) {
+            playMusic(songs[index - 1]);
+        }
+    })
+
+
+    next.addEventListener("click", () => {
+        console.log("next clicked");
+        let index = songs.indexOf(currentSong.src.split("/").slice(-1)[0]);
+        console.log(songs, index);
+        if ((index + 1) < songs.length) {
+            playMusic(songs[index + 1]);
+        }
+    })
 
 }
 main()
