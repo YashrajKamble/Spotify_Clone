@@ -177,9 +177,10 @@ body {
   bottom: 20px;
   filter: invert(1);
   background: #dad5d5;
-  border-radius: 30px;
+  border-radius: 15px;
   width: 70vw;
   padding: 7px;
+  height: 40px;
 }
 
 .songsbuttons {
@@ -191,6 +192,7 @@ body {
 .songsList ul {
   padding: 0 15px;
 }
+
 .songsList ul li {
   list-style-type: decimal;
   font-size: 14px;
@@ -205,6 +207,7 @@ body {
   justify-content: space-between;
   align-items: center;
 }
+
 .playNow {
   display: flex;
   /* justify-content: center; */
@@ -216,14 +219,42 @@ body {
   width: 69px;
   padding: 5px;
 }
+
 .playNow span {
   font-size: 11px;
 }
 .info {
   font-size: 13px;
-  width: 135px
+  width: 135px;
 }
-.songsList{
+
+.songsList {
   height: 350px;
   overflow: auto;
+}
+
+.seekbar {
+  height: 2px;
+  width: 68vw;
+  background: black;
+  position: absolute;
+  bottom: 0;
+  border-radius: 10px;
+  left: 01;
+  margin: 10px;
+}
+
+.circle {
+  width: 13px;
+  height: 13px;
+  border-radius: 13px;
+  background-color: black;
+  position: relative;
+  bottom: 6px;
+  left: 0;
+  transition: left 1s;
+}
+
+.songsbuttons img {
+  cursor: pointer;
 }

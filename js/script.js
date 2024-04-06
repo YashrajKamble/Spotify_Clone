@@ -1,6 +1,6 @@
 console.log("hello spotify");
 
-
+let currentSong = new Audio();
 async function getSongs() {
     let a = await fetch("http://127.0.0.1:5500/songs/");
     let response = await a.text();
@@ -18,6 +18,17 @@ async function getSongs() {
     }
     return songs;
 }
+
+const playMusic = (track) => {
+    // let audio = new Audio("/songs/" + track);
+    currentSong.src = "/songs/" + track;
+    currentSong.play();
+}
+
+
+
+
+
 async function main() {
     let songs = await getSongs();
     console.log(songs);
@@ -32,18 +43,24 @@ async function main() {
                             <div class="playNow">
                                 <span>Play Now</span>
                                 <img src="/img/play.svg" class="invert">
-                            </div>
-       </li>`;
+                            </div></li>`;
     }
+    Array.from(document.querySelector(".songsList").getElementsByTagName("li")).forEach(e => {
+        e.addEventListener("click", element => {
+            console.log(e.querySelector(".info").firstElementChild.innerHTML);
+            playMusic(e.querySelector(".info").firstElementChild.innerHTML.trim());
+        })
+    });
 
-    var audio = new Audio(songs[0]);
-    // audio.play();
-
-    audio.addEventListener("loadeddata", () => {
-        console.log(audio.duration, audio.currentSrc, audio.currentTime);
+    play.addEventListener("click", () => {
+        if (currentSong.paused) {
+            currentSong.play();
+        }
+        else {
+            currentSong.pause();
+        }
     })
+
+
 }
-
-main();
-
-
+main()
