@@ -113,5 +113,12 @@ async function main() {
         document.querySelector(".left").style.left = "0";
     })
 
+        //add event listener for close button on left pannel
+         //add event listener for close button on left pannel
+    document.querySelector(".close").addEventListener("click", () => {
+        document.querySelector(".left").style.left = "-100%";
+
+    });
+
 }
 main()
