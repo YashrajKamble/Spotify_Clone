@@ -13,7 +13,7 @@ function secondsToMinutesSeconds(seconds) {
 }
 
 // Example usage:
-console.log(secondsToMinutesSeconds(123.456)); // Output: 02:03
+// console.log(secondsToMinutesSeconds(123.456)); // Output: 02:03
 
 
 
@@ -26,19 +26,37 @@ async function getSongs(folder) {
     currFolder = folder;
     let a = await fetch(`http://127.0.0.1:5500/${folder}/`);
     let response = await a.text();
-    console.log(response);
+    // console.log(response);
     let div = document.createElement("div");
     div.innerHTML = response;
     let lia = div.getElementsByTagName("a")
     // console.log(li)
-    let songs = [];
+    songs = [];
     for (let index = 0; index < lia.length; index++) {
         const element = lia[index];
         if (typeof element.href === 'string' && element.href.endsWith(".mp3")) {
             songs.push(element.href.split(`/${folder}/`)[1]);
         }
     }
-    return songs;
+    let songUL = document.querySelector(".songsList").getElementsByTagName("ul")[0];
+    songUL.innerHTML = ""
+    for (const song of songs) {
+        songUL.innerHTML = songUL.innerHTML + ` <li><img src="/img/music.svg" class="invert">
+                            <div class="info">
+                                <div> ${song.replaceAll("%20", " ")}</div>
+                                <div>Yashraj_K</div>
+                            </div>
+                            <div class="playNow">
+                                <span>Play Now</span>
+                                <img src="/img/play.svg" class="invert">
+                            </div></li>`;
+    }
+    Array.from(document.querySelector(".songsList").getElementsByTagName("li")).forEach(e => {
+        e.addEventListener("click", element => {
+            console.log(e.querySelector(".info").firstElementChild.innerHTML);
+            playMusic(e.querySelector(".info").firstElementChild.innerHTML.trim());
+        })
+    });
 }
 
 const playMusic = (track, pause = false) => {
@@ -57,28 +75,11 @@ const playMusic = (track, pause = false) => {
 
 
 async function main() {
-    songs = await getSongs("songs/ncs");
+    await getSongs("songs/ncs");
     // console.log(songs);
     playMusic(songs[0], true)
 
-    let songUL = document.querySelector(".songsList").getElementsByTagName("ul")[0];
-    for (const song of songs) {
-        songUL.innerHTML = songUL.innerHTML + ` <li><img src="/img/music.svg" class="invert">
-                            <div class="info">
-                                <div> ${song.replaceAll("%20", " ")}</div>
-                                <div>Yashraj_K</div>
-                            </div>
-                            <div class="playNow">
-                                <span>Play Now</span>
-                                <img src="/img/play.svg" class="invert">
-                            </div></li>`;
-    }
-    Array.from(document.querySelector(".songsList").getElementsByTagName("li")).forEach(e => {
-        e.addEventListener("click", element => {
-            console.log(e.querySelector(".info").firstElementChild.innerHTML);
-            playMusic(e.querySelector(".info").firstElementChild.innerHTML.trim());
-        })
-    });
+
 
     play.addEventListener("click", () => {
         if (currentSong.paused) {
@@ -102,7 +103,7 @@ async function main() {
     //add an event listener to seekar
     document.querySelector(".seekbar").addEventListener("click", e => {
         let percent = (e.offsetX / e.target.getBoundingClientRect().width) * 100;
-        console.log(percent);
+        // console.log(percent);
         document.querySelector(".circle").style.left = percent + '%';
         currentSong.currentTime = (currentSong.duration * percent) / 100;
     });
@@ -141,6 +142,14 @@ async function main() {
     document.querySelector(".range").getElementsByTagName("input")[0].addEventListener("change", (e) => {
         console.log("setting value to ", e.target.value, "/100")
         currentSong.volume = parseInt(e.target.value) / 100;
+    })
+
+    // load the playlist whenever card is clicked
+    Array.from(document.getElementsByClassName("card")).forEach(e => {
+        e.addEventListener("click", async item => {
+            console.log(item, item.currentTarget.dataset)
+            songs = await getSongs(`songs/${item.currentTarget.dataset.folder}`);
+        })
     })
 }
 main()
