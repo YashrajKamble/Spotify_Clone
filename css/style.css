@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Varela+Round&display=swap");
 
+:root {
+  --a: 0;
+}
+
 * {
   margin: 0px;
   padding: 0px;
@@ -97,7 +101,7 @@ body {
   padding: 10px;
 }
 
-.cardConatiner {
+.cardContainer {
   margin: 10px;
   display: flex;
   gap: 10px;
@@ -112,6 +116,13 @@ body {
   border-radius: 5px;
   background-color: #252525;
   position: relative;
+  transition: all 0.7s;
+}
+
+.card:hover {
+  background-color: rgb(105, 103, 103);
+  cursor: pointer;
+  --a: 1;
 }
 
 .card > * {
@@ -131,10 +142,10 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  top: 151px;
+  top: 127px;
   position: absolute;
-  left: 74%;
-  opacity: 0;
+  left: 70%;
+  opacity: var(--a);
   transition: all 1s ease-out;
 }
 
@@ -306,6 +317,13 @@ body {
   gap: 12px;
 }
 
+.volume img {
+  width: 27px;
+}
+/* .volume .range {
+  width: 20px;
+} */
+
 @media (max-width: 1024px) {
   .left {
     background-color: black;
@@ -341,7 +359,7 @@ body {
     width: calc(100vw - 65px);
   }
 
-  .cardConatiner {
+  .cardContainer {
     margin: 0px;
     display: flex;
     gap: 10px;
@@ -379,6 +397,7 @@ body {
     justify-content: space-evenly;
     align-items: center;
     flex-direction: column;
-    gap: 13px;
+    /* gap: 13px; */
+    gap: 0px;
   }
 }

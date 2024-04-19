@@ -1,5 +1,3 @@
-console.log("hello spotify");
-
 function secondsToMinutesSeconds(seconds) {
     // Round seconds to nearest whole number
     seconds = Math.round(seconds);
@@ -21,10 +19,12 @@ console.log(secondsToMinutesSeconds(123.456)); // Output: 02:03
 
 let currentSong = new Audio();
 let songs;
+let currFolder;
 
 
-async function getSongs() {
-    let a = await fetch("http://127.0.0.1:5500/songs/");
+async function getSongs(folder) {
+    currFolder = folder;
+    let a = await fetch(`http://127.0.0.1:5500/${folder}/`);
     let response = await a.text();
     console.log(response);
     let div = document.createElement("div");
@@ -35,7 +35,7 @@ async function getSongs() {
     for (let index = 0; index < lia.length; index++) {
         const element = lia[index];
         if (typeof element.href === 'string' && element.href.endsWith(".mp3")) {
-            songs.push(element.href.split("/songs/")[1]);
+            songs.push(element.href.split(`/${folder}/`)[1]);
         }
     }
     return songs;
@@ -43,7 +43,7 @@ async function getSongs() {
 
 const playMusic = (track, pause = false) => {
     // let audio = new Audio("/songs/" + track);
-    currentSong.src = "/songs/" + track;
+    currentSong.src = `/${currFolder}/` + track;
     if (!pause) {
         currentSong.play();
         play.src = "/img/pause.svg";
@@ -57,7 +57,7 @@ const playMusic = (track, pause = false) => {
 
 
 async function main() {
-    songs = await getSongs();
+    songs = await getSongs("songs/ncs");
     // console.log(songs);
     playMusic(songs[0], true)
 
@@ -92,7 +92,7 @@ async function main() {
     })
     //listen for timeupdate event
     currentSong.addEventListener("timeupdate", () => {
-        console.log(currentSong.currentTime, currentSong.duration);
+        // console.log(currentSong.currentTime, currentSong.duration);
         document.querySelector(".songTime").innerHTML = `${secondsToMinutesSeconds(currentSong.currentTime)} / ${secondsToMinutesSeconds(currentSong.duration)}`
 
         document.querySelector(".circle").style.left = (currentSong.currentTime / currentSong.duration) * 100 + "%";
@@ -106,7 +106,7 @@ async function main() {
         document.querySelector(".circle").style.left = percent + '%';
         currentSong.currentTime = (currentSong.duration * percent) / 100;
     });
-    //add event listener for hamurger
+    //add event listener for hamburger
     document.querySelector(".hamburger").addEventListener("click", () => {
         document.querySelector(".left").style.left = "0";
     })
@@ -132,11 +132,15 @@ async function main() {
     next.addEventListener("click", () => {
         console.log("next clicked");
         let index = songs.indexOf(currentSong.src.split("/").slice(-1)[0]);
-        console.log(songs, index);
+        // console.log(songs, index);
         if ((index + 1) < songs.length) {
             playMusic(songs[index + 1]);
         }
     })
 
+    document.querySelector(".range").getElementsByTagName("input")[0].addEventListener("change", (e) => {
+        console.log("setting value to ", e.target.value, "/100")
+        currentSong.volume = parseInt(e.target.value) / 100;
+    })
 }
 main()
