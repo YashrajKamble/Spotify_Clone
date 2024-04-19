@@ -19,6 +19,7 @@ body {
   width: 25vw;
   padding: 5px;
 }
+
 .close {
   display: none;
 }
@@ -91,6 +92,7 @@ body {
   padding: 10px;
   font-size: 11px;
 }
+
 .spotifyPlaylist h1 {
   padding: 10px;
 }
@@ -235,6 +237,7 @@ body {
 .playNow span {
   font-size: 11px;
 }
+
 .info {
   font-size: 13px;
   width: 135px;
@@ -296,7 +299,7 @@ body {
   margin: 10px 0;
 }
 
-.volume{
+.volume {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -325,15 +328,19 @@ body {
     /* width: calc(100vw-50px); */
     width: calc(100vw - 40px);
   }
+
   .right {
     width: 100vw;
   }
+
   .hamburger {
     display: block;
   }
+
   .seekbar {
     width: calc(100vw - 65px);
   }
+
   .cardConatiner {
     margin: 0px;
     display: flex;
@@ -343,22 +350,35 @@ body {
     overflow-y: auto;
     justify-content: center;
   }
+
   .card {
     width: 75vw;
   }
+
   .close {
     display: block;
   }
+
   .right {
     margin: 0;
   }
+
   .aboveBar {
     flex-direction: column;
     gap: 10px;
     align-items: center;
   }
+
   .songInfo,
   .songTime {
     width: auto;
+  }
+
+  .timeVal {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    gap: 13px;
   }
 }
