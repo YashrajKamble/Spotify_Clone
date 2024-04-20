@@ -84,13 +84,12 @@ async function displayAlbums() {
     let array = Array.from(anchors)
     for (let index = 0; index < array.length; index++) {
         const e = array[index]
-    
-    // Array.from(anchors).forEach(async e => {
+
         // console.log(e.href)
         if (e.href.includes("/songs/")) {
             // console.log(e.href)
             let folder = e.href.split("songs/").slice(-1)[0]
-            console.log(folder)
+            // console.log(folder)
             // get the metadata of the folder
             let a = await fetch(`http://127.0.0.1:5500/songs/${folder}/info.json`);
             let response = await a.json();
@@ -199,6 +198,22 @@ async function main() {
     document.querySelector(".range").getElementsByTagName("input")[0].addEventListener("change", (e) => {
         console.log("setting value to ", e.target.value, "/100")
         currentSong.volume = parseInt(e.target.value) / 100;
+    })
+
+    // add event listener to mute the track
+    document.querySelector(".volume>img").addEventListener("click", (e) => {
+        console.log(e.target)
+        console.log("changing", e.target.svg)
+        if (e.target.src.includes("volume.svg")) {
+            currentSong.volume = 0;
+            e.target.src = e.target.src.replace("volume.svg", "mute.svg")
+            document.querySelector(".range").getElementsByTagName("input")[0].value = 0;
+        }
+        else {
+            currentSong.volume = .10;
+            e.target.src = e.target.src.replace("mute.svg", "volume.svg")
+            document.querySelector(".range").getElementsByTagName("input")[0].value = 10;
+        }
     })
 
 

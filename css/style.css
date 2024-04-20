@@ -315,14 +315,16 @@ body {
   justify-content: center;
   align-items: center;
   gap: 12px;
+  cursor: pointer;
 }
 
 .volume img {
   width: 27px;
 }
-/* .volume .range {
-  width: 20px;
-} */
+
+.range input{
+  cursor: pointer;
+}
 
 @media (max-width: 1024px) {
   .left {
