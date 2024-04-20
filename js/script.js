@@ -94,7 +94,7 @@ async function displayAlbums() {
             let a = await fetch(`http://127.0.0.1:5500/songs/${folder}/info.json`);
             let response = await a.json();
             console.log(response)
-            cardContainer.innerHTML = cardContainer.innerHTML + ` <div data-folder="cs" class="card">
+            cardContainer.innerHTML = cardContainer.innerHTML + ` <div data-folder="${folder}" class="card">
             <!-- <div class="play"> -->
             <div class="play">
                 <div class="play-container">
@@ -202,8 +202,8 @@ async function main() {
 
     // add event listener to mute the track
     document.querySelector(".volume>img").addEventListener("click", (e) => {
-        console.log(e.target)
-        console.log("changing", e.target.svg)
+        // console.log(e.target)
+        // console.log("changing", e.target.svg)
         if (e.target.src.includes("volume.svg")) {
             currentSong.volume = 0;
             e.target.src = e.target.src.replace("volume.svg", "mute.svg")
