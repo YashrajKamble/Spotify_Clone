@@ -71,6 +71,29 @@ const playMusic = (track, pause = false) => {
 }
 
 
+async function displayAlbums() {
+    let a = await fetch(`http://127.0.0.1:5500/songs/`);
+    let response = await a.text();
+    // console.log(response);
+    let div = document.createElement("div");
+    div.innerHTML = response;
+    // console.log(div)
+    let anchors = div.getElementsByTagName("a")
+    // console.log(anchors)
+    Array.from(anchors).forEach(async e => {
+        // console.log(e.href)
+        if (e.href.includes("/songs/")) {
+            // console.log(e.href)
+            let folder = e.href.split("songs/").slice(-1)[0]
+            console.log(folder)
+            // get the metadata of the folder
+            let a = await fetch(`http://127.0.0.1:5500/songs/${folder}/info.json`);
+            let response = await a.json();
+            console.log(response)
+        }
+    })
+
+}
 
 
 
@@ -79,7 +102,8 @@ async function main() {
     // console.log(songs);
     playMusic(songs[0], true)
 
-
+    // display all the albums on the page
+    displayAlbums()
 
     play.addEventListener("click", () => {
         if (currentSong.paused) {
@@ -112,14 +136,14 @@ async function main() {
         document.querySelector(".left").style.left = "0";
     })
 
-    //add event listener for close button on left pannel
-    //add event listener for close button on left pannel
+    //add event listener for close button on left panel
+    //add event listener for close button on left panel
     document.querySelector(".close").addEventListener("click", () => {
         document.querySelector(".left").style.left = "-100%";
 
     });
 
-    // add event listenser to previous and next button
+    // add event listener to previous and next button
     previous.addEventListener("click", () => {
         console.log("previous clicked");
         let index = songs.indexOf(currentSong.src.split("/").slice(-1)[0]);
@@ -147,7 +171,7 @@ async function main() {
     // load the playlist whenever card is clicked
     Array.from(document.getElementsByClassName("card")).forEach(e => {
         e.addEventListener("click", async item => {
-            console.log(item, item.currentTarget.dataset)
+            // console.log(item, item.currentTarget.dataset)
             songs = await getSongs(`songs/${item.currentTarget.dataset.folder}`);
         })
     })
