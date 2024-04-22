@@ -112,7 +112,9 @@ body {
   gap: 10px;
   flex-wrap: wrap;
   max-height: 64vh;
+  /* max-height: unset; */
   overflow-y: auto;
+  /* overflow-y: unset; */
 }
 
 .card {
@@ -341,6 +343,9 @@ body {
     z-index: 1;
     width: 300px;
     padding: 0;
+    left: 0px;
+    position: fixed;
+    height: 100vh;
   }
 
   .left .close {
@@ -372,9 +377,10 @@ body {
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
-    max-height: 56vh;
-    overflow-y: auto;
-    justify-content: center;
+    /* max-height: 64vh; */
+    max-height: unset;
+    /* overflow-y: auto; */
+    overflow-y: unset;
   }
 
   .card {
@@ -407,5 +413,24 @@ body {
     flex-direction: column;
     /* gap: 13px; */
     gap: 0px;
+  }
+  ::-webkit-scrollbar {
+    width: 20px; /* width of the scrollbar */
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #333; /* color of the track */
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #666; /* color of the handle */
+    border-radius: 6px; /* border radius of the handle */
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #888; /* color of the handle on hover */
   }
 }
