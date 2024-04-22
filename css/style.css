@@ -106,12 +106,12 @@ body {
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
-  max-height: 68vh;
+  max-height: 65vh;
   overflow-y: auto;
 }
 
 .card {
-  width: 150px;
+  width: 160px;
   padding: 10px;
   border-radius: 5px;
   background-color: #252525;
@@ -142,9 +142,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  top: 127px;
+  top: 135px;
   position: absolute;
-  left: 70%;
+  left: 72%;
   opacity: var(--a);
   transition: all 1s ease-out;
 }
@@ -322,7 +322,7 @@ body {
   width: 27px;
 }
 
-.range input{
+.range input {
   cursor: pointer;
 }
 
