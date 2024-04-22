@@ -57,6 +57,7 @@ async function getSongs(folder) {
             playMusic(e.querySelector(".info").firstElementChild.innerHTML.trim());
         })
     });
+    return songs;
 }
 
 const playMusic = (track, pause = false) => {
@@ -118,11 +119,12 @@ async function displayAlbums() {
     }
 
 
-    // load the playlist whenever card is clicked
+    // load the playlist whenever card is clicked   
     Array.from(document.getElementsByClassName("card")).forEach(e => {
         e.addEventListener("click", async item => {
             // console.log(item, item.currentTarget.dataset)
             songs = await getSongs(`songs/${item.currentTarget.dataset.folder}`);
+            playMusic(songs[0])
         })
     })
 }
