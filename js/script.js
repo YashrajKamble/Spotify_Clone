@@ -85,16 +85,17 @@ async function displayAlbums() {
     let array = Array.from(anchors)
     for (let index = 0; index < array.length; index++) {
         const e = array[index]
-
+        if (e.href.includes("/songs") && !e.href.includes(".htaccess")) { }
         // console.log(e.href)
         if (e.href.includes("/songs/")) {
             // console.log(e.href)
             let folder = e.href.split("songs/").slice(-1)[0]
             // console.log(folder)
             // get the metadata of the folder
-            let a = await fetch(`http://127.0.0.1:5500/songs/${folder}/info.json`);
+            // let a = await fetch(`http://127.0.0.1:5500/songs/${folder}/info.json`);
+            let a = await fetch(`songs/${folder}/info.json`);
             let response = await a.json();
-            console.log(response)
+            // console.log(response)
             cardContainer.innerHTML = cardContainer.innerHTML + ` <div data-folder="${folder}" class="card">
             <!-- <div class="play"> -->
             <div class="play">

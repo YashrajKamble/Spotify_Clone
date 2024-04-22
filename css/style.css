@@ -82,6 +82,11 @@ body {
   height: 50px;
 }
 
+.left-arrow,
+.right-arrow {
+  cursor: pointer;
+}
+
 .buttons {
   padding: 5px;
 }
@@ -89,7 +94,7 @@ body {
 .nav {
   padding: 15px;
   display: flex;
-  gap: 2px;
+  gap: 10px;
 }
 
 .spotifyPlaylist {
@@ -155,13 +160,14 @@ body {
 
 .hamburger {
   display: none;
+  cursor: pointer;
 }
 
 .buttons > * {
   margin: 0 12px;
 }
 
-.singupBtn {
+.signupBtn {
   background: rgb(34, 34, 34);
   /* background: black; */
   color: rgb(110, 106, 106);
@@ -172,7 +178,7 @@ body {
   font-size: 16px;
 }
 
-.singupBtn:hover {
+.signupBtn:hover {
   font-size: 17px;
   color: white;
 }
@@ -366,7 +372,7 @@ body {
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
-    max-height: 68vh;
+    max-height: 56vh;
     overflow-y: auto;
     justify-content: center;
   }
