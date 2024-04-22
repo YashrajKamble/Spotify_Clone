@@ -106,7 +106,7 @@ body {
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
-  max-height: 65vh;
+  max-height: 64vh;
   overflow-y: auto;
 }
 
@@ -260,7 +260,7 @@ body {
 }
 
 .seekbar {
-  height: 2px;
+  height: 3px;
   width: 68vw;
   background: black;
   position: absolute;
@@ -277,7 +277,7 @@ body {
   border-radius: 13px;
   background-color: black;
   position: relative;
-  bottom: 6px;
+  bottom: 5px;
   left: 0;
   transition: left 1s;
 }
@@ -307,7 +307,7 @@ body {
 .aboveBar {
   display: flex;
   justify-content: space-between;
-  margin: 10px 0;
+  margin: 10px 10px 12px 10px;
 }
 
 .volume {
