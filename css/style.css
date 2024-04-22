@@ -441,38 +441,35 @@ body {
     background: red;
   }
 }
+
+/*-------------------MOBILE-L -----------------------*/
 @media (max-width: 425px) {
   .spotifyPlaylist h1 {
     padding: 10px;
     background: green;
   }
-}
-
-@media (max-width: 375px) {
-  .spotifyPlaylist h1 {
-    padding: 10px;
-    background: blue;
-  }
-}
-
-@media (max-width: 320px) {
   .spotifyPlaylist h1 {
     padding: 10px;
     width: 85vw;
   }
+
   .left {
     left: -500px;
     width: 300px;
   }
+
   .header {
     height: 45px;
   }
+
   .hamburger {
     height: 20px;
   }
+
   .loginBtn {
     padding: 7px;
   }
+
   .buttons {
     margin-top: 5px;
   }
@@ -480,53 +477,259 @@ body {
   .timeVal {
     flex-direction: row;
   }
-  .voulume {
+
+  .volume {
     gap: 5px;
   }
+
   .aboveBar {
     gap: 2px auto 5px;
   }
+
   .cardContainer {
     margin-bottom: 45%;
   }
+
   .card {
     margin-left: 6%;
   }
+
   .songsList {
     height: 360px;
   }
+
   .left .close {
     right: 25px;
     top: 10px;
     width: 25px;
   }
+
   .logo {
     padding-left: 10px;
   }
+
   .home ul li {
     margin-left: 10px;
   }
+
   .heading {
     padding: 10px 14px;
   }
+
   .songsList ul {
     padding: 0 10px;
   }
+
   .footer {
     font-size: 10px;
     gap: 10px;
     bottom: 5px;
     padding: 10px;
   }
-  /* .playbar {
-    margin-right: 0px;
-  } */
+
   .playbar {
-    margin-left: 7px;
+    margin-left: 2px;
   }
+
   .spotifyPlaylist {
     margin-bottom: 3%;
   }
+
+  .playbar {
+    bottom: 10px;
+  }
+}
+/*-------------------MOBILE-M -----------------------*/
+@media (max-width: 375px) {
+  .spotifyPlaylist h1 {
+    padding: 10px;
+  }
+  .spotifyPlaylist h1 {
+    padding: 10px;
+    width: 85vw;
+  }
+
+  .nav {
+    padding: 9px;
+
+}
+
+  .left {
+    left: -500px;
+    width: 300px;
+  }
+
+  .header {
+    height: 40px;
+  }
+
+  .hamburger {
+    height: 20px;
+  }
+
+  .loginBtn {
+    padding: 5px;
+  }
+
+  .buttons {
+    margin: 1px 0px 1px;
+  }
+
+  .timeVal {
+    flex-direction: row;
+  }
+
+  .volume {
+    gap: 5px;
+  }
+
+  .aboveBar {
+    gap: 2px auto 5px;
+  }
+
+  .cardContainer {
+    margin-bottom: 40%;
+  }
+
+  .card {
+    margin-left: 7%;
+  }
+
+  .songsList {
+    height: 400px;
+  }
+
+  .left .close {
+      right: 30px;
+      top: 10px;
+      width: 20px;
+  }
+  }
+
+  .logo {
+    padding-left: 10px;
+  }
+
+  .home ul li {
+    margin-left: 10px;
+  }
+
+  .heading {
+    padding: 10px 14px;
+  }
+
+  .songsList ul {
+    padding: 0 10px;
+  }
+
+  .footer {
+    font-size: 10px;
+    gap: 10px;
+    bottom: 5px;
+    padding: 10px;
+  }
+
+  .playbar {
+    margin-left: 2px;
+  }
+
+  .spotifyPlaylist {
+    margin-bottom: 3%;
+  }
+
+  .playbar {
+    bottom: 10px;
+  }
+
+/* MOBILE-S _______________________________________*/
+@media (max-width: 320px) {
+  .spotifyPlaylist h1 {
+    padding: 10px;
+    width: 85vw;
+  }
+
+  .left {
+    left: -500px;
+    width: 300px;
+  }
+
+  .header {
+    height: 45px;
+  }
+
+  .hamburger {
+    height: 20px;
+  }
+
+  .loginBtn {
+    padding: 7px;
+  }
+
+  .buttons {
+    margin-top: 5px;
+  }
+
+  .timeVal {
+    flex-direction: row;
+  }
+
+  .volume {
+    gap: 5px;
+  }
+
+  .aboveBar {
+    gap: 2px auto 5px;
+  }
+
+  .cardContainer {
+    margin-bottom: 45%;
+  }
+
+  .card {
+    margin-left: 6%;
+  }
+
+  .songsList {
+    height: 360px;
+  }
+
+  .left .close {
+    right: 25px;
+    top: 10px;
+    width: 25px;
+  }
+
+  .logo {
+    padding-left: 10px;
+  }
+
+  .home ul li {
+    margin-left: 10px;
+  }
+
+  .heading {
+    padding: 10px 14px;
+  }
+
+  .songsList ul {
+    padding: 0 10px;
+  }
+
+  .footer {
+    font-size: 10px;
+    gap: 10px;
+    bottom: 5px;
+    padding: 10px;
+  }
+
+  .playbar {
+    margin-left: 2px;
+  }
+
+  .spotifyPlaylist {
+    margin-bottom: 3%;
+  }
+
   .playbar {
     bottom: 10px;
   }
