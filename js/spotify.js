@@ -24,8 +24,8 @@ let currFolder;
 
 async function getSongs(folder) {
     currFolder = folder;
-    // let a = await fetch(`songs/${folder}/`); for hosting
-    let a = await fetch(`http://127.0.0.1:5500/${folder}/`);
+    // let a = await fetch(`songs/${folder}/`);
+    let a = await fetch(`${folder}/`)
     let response = await a.text();
     // console.log(response);
     let div = document.createElement("div");
@@ -45,6 +45,8 @@ async function getSongs(folder) {
         songUL.innerHTML = songUL.innerHTML + ` <li><img src="/img/music.svg" class="invert">
                             <div class="info">
                                 <div> ${song.replaceAll("%20", " ")}</div>
+                                
+                                
                                 <div>Yashraj_K</div>
                             </div>
                             <div class="playNow">
@@ -54,7 +56,7 @@ async function getSongs(folder) {
     }
     Array.from(document.querySelector(".songsList").getElementsByTagName("li")).forEach(e => {
         e.addEventListener("click", element => {
-            console.log(e.querySelector(".info").firstElementChild.innerHTML);
+            // console.log(e.querySelector(".info").firstElementChild.innerHTML);
             playMusic(e.querySelector(".info").firstElementChild.innerHTML.trim());
         })
     });
@@ -74,7 +76,7 @@ const playMusic = (track, pause = false) => {
 
 
 async function displayAlbums() {
-    let a = await fetch(`http://127.0.0.1:5500/songs/`);
+    let a = await fetch(`/songs/`);
     let response = await a.text();
     // console.log(response)
     let div = document.createElement("div");
@@ -86,8 +88,8 @@ async function displayAlbums() {
     let array = Array.from(anchors)
     for (let index = 0; index < array.length; index++) {
         const e = array[index]
-        if (e.href.includes("songs/") && !e.href.includes(".htaccess")) {
-            let folder = e.href.split("songs/").slice(-1)[0]
+        if (e.href.includes("/songs/") && !e.href.includes(".htaccess")) {
+            let folder = e.href.split("/songs/").slice(-1)[0]
             // console.log(e.href)
             // console.log(folder)
             let a = await fetch(`/songs/${folder}/info.json`);
@@ -176,9 +178,9 @@ async function main() {
 
     // add event listener to previous and next button
     previous.addEventListener("click", () => {
-        console.log("previous clicked");
+        // console.log("previous clicked");
         let index = songs.indexOf(currentSong.src.split("/").slice(-1)[0]);
-        console.log(songs, index);
+        // console.log(songs, index);
         if ((index - 1) >= 0) {
             playMusic(songs[index - 1]);
         }
@@ -186,7 +188,7 @@ async function main() {
 
 
     next.addEventListener("click", () => {
-        console.log("next clicked");
+        // console.log("next clicked");
         let index = songs.indexOf(currentSong.src.split("/").slice(-1)[0]);
         // console.log(songs, index);
         if ((index + 1) < songs.length) {
@@ -195,7 +197,7 @@ async function main() {
     })
 
     document.querySelector(".range").getElementsByTagName("input")[0].addEventListener("change", (e) => {
-        console.log("setting value to ", e.target.value, "/100")
+        // console.log("setting value to ", e.target.value, "/100")
         currentSong.volume = parseInt(e.target.value) / 100;
         if (currentSong.volume > 0) {
             document.querySelector(".volume>img").src = document.querySelector(".volume>img").src.replace("mute.svg", "volume.svg")
