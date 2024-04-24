@@ -385,22 +385,7 @@ body {
   margin-bottom: 3%;
 }
 
-@media (max-width: 2560px) {
-  .songsList {
-    height: 1900px;
-  }
-  .playbar {
-    bottom: 23%;
-  }
-}
-@media (max-width: 1440px) {
-  .songsList {
-    height: 900px;
-  }
-  .playbar {
-    bottom: 17%;
-  }
-}
+
 @media (max-width: 1024px) {
   .songsList {
     height: 700px;
