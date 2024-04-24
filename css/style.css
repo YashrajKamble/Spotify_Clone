@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Varela+Round&display=swap");
 
 :root {
-  /* --a: 0; */
+  --a: 0;
 }
 
 * {
@@ -66,6 +66,7 @@ body {
   min-height: 73vh;
   position: relative;
 }
+
 .f1 {
   cursor: pointer;
 }
@@ -122,9 +123,7 @@ body {
   gap: 10px;
   flex-wrap: wrap;
   max-height: 64vh;
-  /* max-height: unset; */
   overflow-y: auto;
-  /* overflow-y: unset; */
 }
 
 .card {
@@ -181,7 +180,6 @@ body {
 
 .signupBtn {
   background: rgb(34, 34, 34);
-  /* background: black; */
   color: rgb(110, 106, 106);
   font-weight: bold;
   border: none;
@@ -253,8 +251,6 @@ body {
 
 .playNow {
   display: flex;
-  /* justify-content: center; */
-  /* align-items: center; */
 }
 
 .playNow {
@@ -390,9 +386,6 @@ body {
     height: 700px;
     overflow: auto;
   }
-  .playbar {
-    bottom: 15%;
-  }
   .play {
     top: 135px;
     left: 70%;
@@ -403,6 +396,7 @@ body {
   .playbar {
     bottom: 2%;
   }
+
   .left {
     background-color: black;
     position: absolute;
@@ -424,7 +418,6 @@ body {
   }
 
   .playbar {
-    /* width: calc(100vw-50px); */
     width: calc(100vw - 40px);
   }
 
@@ -445,9 +438,7 @@ body {
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
-    /* max-height: 64vh; */
     max-height: unset;
-    /* overflow-y: auto; */
     overflow-y: unset;
   }
 
@@ -479,28 +470,28 @@ body {
     justify-content: space-evenly;
     align-items: center;
     flex-direction: column;
-    /* gap: 13px; */
     gap: 0px;
   }
   ::-webkit-scrollbar {
-    width: 20px; /* width of the scrollbar */
+    width: 20px;
   }
 
   /* Track */
   ::-webkit-scrollbar-track {
-    background: #333; /* color of the track */
+    background: #333;
   }
 
   /* Handle */
   ::-webkit-scrollbar-thumb {
-    background: #666; /* color of the handle */
-    border-radius: 6px; /* border radius of the handle */
+    background: #666;
+    border-radius: 6px;
   }
 
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
-    background: #888; /* color of the handle on hover */
+    background: #888;
   }
+
   .play {
     top: 160px;
     left: 74%;
@@ -516,16 +507,20 @@ body {
     height: 500px;
     overflow: auto;
   }
+
   .card {
     margin-left: 4%;
     width: 24vw;
   }
+
   .cardContainer {
     margin-bottom: 9%;
   }
+
   .aboveBar {
     flex-direction: row;
   }
+
   .timeVal {
     flex-direction: row;
   }
@@ -620,9 +615,11 @@ body {
   .playbar {
     bottom: 10px;
   }
+
   .aboveBar {
     flex-direction: column;
   }
+
   .play {
     top: 122px;
     left: 70%;
@@ -633,6 +630,7 @@ body {
   .spotifyPlaylist h1 {
     padding: 10px;
   }
+
   .spotifyPlaylist h1 {
     padding: 10px;
     width: 85vw;
@@ -697,9 +695,11 @@ body {
   .close img {
     width: 35px;
   }
+
   .aboveBar {
     flex-direction: column;
   }
+
   .play {
     top: 275px;
     left: 84%;
@@ -770,11 +770,6 @@ body {
     padding: 7px;
   }
 
-  .buttons {
-    /* margin-top: 5px; */
-    /* margin-bottom: 5px; */
-  }
-
   .timeVal {
     flex-direction: row;
   }
@@ -842,9 +837,7 @@ body {
   .aboveBar {
     flex-direction: column;
   }
-  /* .timeVal {
-    flex-direction: column;
-  } */
+
   .play {
     top: 232px;
     left: 81%;
