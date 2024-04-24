@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&family=Varela+Round&display=swap");
 
 :root {
-  --a: 0;
+  /* --a: 0; */
 }
 
 * {
@@ -385,7 +385,6 @@ body {
   margin-bottom: 3%;
 }
 
-
 @media (max-width: 1024px) {
   .songsList {
     height: 700px;
@@ -393,6 +392,10 @@ body {
   }
   .playbar {
     bottom: 15%;
+  }
+  .play {
+    top: 135px;
+    left: 70%;
   }
 }
 
@@ -497,6 +500,10 @@ body {
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
     background: #888; /* color of the handle on hover */
+  }
+  .play {
+    top: 160px;
+    left: 74%;
   }
 }
 
@@ -616,6 +623,10 @@ body {
   .aboveBar {
     flex-direction: column;
   }
+  .play {
+    top: 122px;
+    left: 70%;
+  }
 }
 /*-------------------MOBILE-M -----------------------*/
 @media (max-width: 375px) {
@@ -688,6 +699,10 @@ body {
   }
   .aboveBar {
     flex-direction: column;
+  }
+  .play {
+    top: 275px;
+    left: 84%;
   }
 }
 
@@ -830,4 +845,8 @@ body {
   /* .timeVal {
     flex-direction: column;
   } */
+  .play {
+    top: 232px;
+    left: 81%;
+  }
 }
