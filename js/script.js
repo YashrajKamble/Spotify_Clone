@@ -53,7 +53,7 @@ async function getSongs(folder) {
     }
     Array.from(document.querySelector(".songsList").getElementsByTagName("li")).forEach(e => {
         e.addEventListener("click", element => {
-            console.log(e.querySelector(".info").firstElementChild.innerHTML);
+            // console.log(e.querySelector(".info").firstElementChild.innerHTML);
             playMusic(e.querySelector(".info").firstElementChild.innerHTML.trim());
         })
     });
@@ -73,29 +73,19 @@ const playMusic = (track, pause = false) => {
 
 
 async function displayAlbums() {
-    let a = await fetch(`http://127.0.0.1:5500/songs/`);
+    let a = await fetch(`songs/`);
     let response = await a.text();
-    // console.log(response);
     let div = document.createElement("div");
     div.innerHTML = response;
-    // console.log(div)
     let anchors = div.getElementsByTagName("a")
-    // console.log(anchors)
     let cardContainer = document.querySelector(".cardContainer")
     let array = Array.from(anchors)
     for (let index = 0; index < array.length; index++) {
         const e = array[index]
-        if (e.href.includes("/songs") && !e.href.includes(".htaccess")) { }
-        // console.log(e.href)
-        if (e.href.includes("/songs/")) {
-            // console.log(e.href)
+        if (e.href.includes("songs/") && !e.href.includes(".htaccess")) {
             let folder = e.href.split("songs/").slice(-1)[0]
-            // console.log(folder)
-            // get the metadata of the folder
-            // let a = await fetch(`http://127.0.0.1:5500/songs/${folder}/info.json`);
-            let a = await fetch(`songs/${folder}/info.json`);
+            let a = await fetch(`/songs/${folder}/info.json`);
             let response = await a.json();
-            // console.log(response)
             cardContainer.innerHTML = cardContainer.innerHTML + ` <div data-folder="${folder}" class="card">
             <!-- <div class="play"> -->
             <div class="play">
@@ -180,9 +170,9 @@ async function main() {
 
     // add event listener to previous and next button
     previous.addEventListener("click", () => {
-        console.log("previous clicked");
+        // console.log("previous clicked");
         let index = songs.indexOf(currentSong.src.split("/").slice(-1)[0]);
-        console.log(songs, index);
+        // console.log(songs, index);
         if ((index - 1) >= 0) {
             playMusic(songs[index - 1]);
         }
@@ -190,7 +180,7 @@ async function main() {
 
 
     next.addEventListener("click", () => {
-        console.log("next clicked");
+        // console.log("next clicked");
         let index = songs.indexOf(currentSong.src.split("/").slice(-1)[0]);
         // console.log(songs, index);
         if ((index + 1) < songs.length) {

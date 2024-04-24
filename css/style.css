@@ -551,8 +551,7 @@ body {
 
   .nav {
     padding: 9px;
-
-}
+  }
 
   .left {
     left: -500px;
@@ -600,46 +599,46 @@ body {
   }
 
   .left .close {
-      right: 30px;
-      top: 10px;
-      width: 20px;
+    right: 30px;
+    top: 10px;
+    width: 20px;
   }
-  }
+}
 
-  .logo {
-    padding-left: 10px;
-  }
+.logo {
+  padding-left: 10px;
+}
 
-  .home ul li {
-    margin-left: 10px;
-  }
+.home ul li {
+  margin-left: 10px;
+}
 
-  .heading {
-    padding: 10px 14px;
-  }
+.heading {
+  padding: 10px 14px;
+}
 
-  .songsList ul {
-    padding: 0 10px;
-  }
+.songsList ul {
+  padding: 0 10px;
+}
 
-  .footer {
-    font-size: 10px;
-    gap: 10px;
-    bottom: 5px;
-    padding: 10px;
-  }
+.footer {
+  font-size: 10px;
+  gap: 10px;
+  bottom: 5px;
+  padding: 10px;
+}
 
-  .playbar {
-    margin-left: 2px;
-  }
+.playbar {
+  margin-left: 2px;
+}
 
-  .spotifyPlaylist {
-    margin-bottom: 3%;
-  }
+.spotifyPlaylist {
+  margin-bottom: 3%;
+}
 
-  .playbar {
-    bottom: 10px;
-  }
+.playbar {
+  bottom: 10px;
+}
 
 /* MOBILE-S _______________________________________*/
 @media (max-width: 320px) {
