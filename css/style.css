@@ -66,6 +66,21 @@ body {
   min-height: 73vh;
   position: relative;
 }
+.f1 {
+  cursor: pointer;
+}
+
+.f1:hover {
+  text-decoration: underline;
+}
+
+.f2 {
+  cursor: pointer;
+}
+
+.f2:hover {
+  text-decoration: underline;
+}
 
 .header {
   display: flex;
@@ -98,6 +113,7 @@ body {
 
 .spotifyPlaylist h1 {
   padding: 5px;
+  cursor: pointer;
 }
 
 .cardContainer {
@@ -608,14 +624,17 @@ body {
 
 .logo {
   padding-left: 10px;
+  cursor: pointer;
 }
 
 .home ul li {
   margin-left: 10px;
+  cursor: pointer;
 }
 
 .heading {
   padding: 5px 14px;
+  cursor: pointer;
 }
 
 .songsList ul {
