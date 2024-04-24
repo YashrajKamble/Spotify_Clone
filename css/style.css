@@ -29,7 +29,7 @@ body {
 }
 
 .right {
-  width: 75vw;
+  width: 73.5vw;
   margin: 10px 0;
   position: relative;
 }
@@ -55,7 +55,11 @@ body {
 }
 
 .heading img {
-  width: 30px;
+  width: 25px;
+}
+
+.heading p {
+  font-size: 18px;
 }
 
 .library {
@@ -63,23 +67,13 @@ body {
   position: relative;
 }
 
-.footer {
-  display: flex;
-  font-size: 10px;
-  gap: 4px;
-  position: absolute;
-  bottom: 10px;
-}
-
-.footer a {
-  color: grey;
-}
-
 .header {
   display: flex;
   justify-content: space-between;
   background: rgb(34, 34, 34);
   height: 50px;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
 }
 
 .left-arrow,
@@ -88,7 +82,7 @@ body {
 }
 
 .buttons {
-  padding: 5px;
+  padding: 9px;
 }
 
 .nav {
@@ -103,7 +97,7 @@ body {
 }
 
 .spotifyPlaylist h1 {
-  padding: 10px;
+  padding: 5px;
 }
 
 .cardContainer {
@@ -190,7 +184,7 @@ body {
   border-radius: 20px;
   color: black;
   font-weight: bold;
-  padding: 10px;
+  padding: 7px 10px;
   width: 80px;
   cursor: pointer;
   border: 0;
@@ -258,23 +252,24 @@ body {
 }
 
 .info {
-  font-size: 13px;
+  font-size: 12px;
   width: 135px;
 }
 
 .songsList {
-  height: 350px;
+  height: 380px;
   overflow: auto;
 }
 
 .seekbar {
+  margin-bottom: 2px;
   height: 3px;
   width: 68vw;
   background: black;
   position: absolute;
-  bottom: 0;
+  bottom: 3px;
   border-radius: 10px;
-  left: 01;
+  left: 0px;
   margin: 10px;
   cursor: pointer;
 }
@@ -304,18 +299,20 @@ body {
   color: black;
   padding: 5px 10px;
   width: 250px;
+  font-size: 12px;
 }
 
 .songTime {
   color: black;
   padding: 5px 10px;
   width: 125px;
+  font-size: 12px;
 }
 
 .aboveBar {
   display: flex;
   justify-content: space-between;
-  margin: 10px 10px 12px 10px;
+  margin: 10px 10px 20px 10px;
 }
 
 .volume {
@@ -327,11 +324,15 @@ body {
 }
 
 .volume img {
-  width: 27px;
+  width: 25px;
 }
 
 .range input {
   cursor: pointer;
+  height: 3px;
+  color: black;
+  padding-bottom: -2px;
+  margin-bottom: 8px;
 }
 
 @media (max-width: 1200px) {
@@ -614,7 +615,7 @@ body {
 }
 
 .heading {
-  padding: 10px 14px;
+  padding: 5px 14px;
 }
 
 .songsList ul {
@@ -625,7 +626,8 @@ body {
   font-size: 10px;
   gap: 10px;
   bottom: 5px;
-  padding: 10px;
+  padding: 0px 0px;
+  margin-top: 15px;
 }
 
 .playbar {
@@ -634,10 +636,6 @@ body {
 
 .spotifyPlaylist {
   margin-bottom: 3%;
-}
-
-.playbar {
-  bottom: 10px;
 }
 
 /* MOBILE-S _______________________________________*/

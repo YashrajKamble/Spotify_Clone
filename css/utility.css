@@ -44,7 +44,7 @@
 
 /* WebKit Scrollbar */
 ::-webkit-scrollbar {
-  width: 12px; /* width of the scrollbar */
+  width: 5px; /* width of the scrollbar */
 }
 
 /* Track */
